@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Memberships | The Performance Club — Uptown Waterloo</title>
+<meta name="description" content="Choose your Performance Club membership. Unlimited gym, Peloton, and coworking access through Den 1880. Add the Premium Wellness Add-On for sauna, cold plunge, hot tub, nap pods and massage chairs." />
+<meta name="keywords" content="performance club membership, gym membership Waterloo, coworking gym, wellness membership, cold plunge sauna Waterloo, Den 1880, performance club pricing" />
+<link rel="canonical" href="https://performanceclub.ca/memberships" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================
+     1. ROOT VARIABLES & RESET
+     ============================================ */
+  :root {
+    --orange: #F39A1F;
+    --orange-bright: #FF9E1B;
+    --orange-deep: #E48312;
+    --black: #0A0A0A;
+    --charcoal: #161616;
+    --smoke: #1F1F1F;
+    --line: #2A2A2A;
+    --bone: #F4EFE6;
+    --ivory: #FAF7F1;
+    --grey-300: #B8B8B8;
+    --grey-500: #7A7A7A;
+    --shadow-lg: 0 30px 80px -20px rgba(0,0,0,0.6);
+    --font-display: 'Anton', 'Bebas Neue', Impact, sans-serif;
+    --font-mono: 'Space Grotesk', monospace;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --max-w: 1400px;
+    --gutter: clamp(20px, 4vw, 60px);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: var(--black);
+    color: var(--ivory);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+  ::selection { background: var(--orange); color: var(--black); }
+
+  /* ============================================
+     2. UTILITIES
+     ============================================ */
+  .container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--orange);
+    display: inline-block;
+  }
+  .eyebrow.bracketed::before { content: '[ '; }
+  .eyebrow.bracketed::after  { content: ' ]'; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 0.92; letter-spacing: 0.005em; text-transform: uppercase; color: var(--ivory); }
+  h2 { font-size: clamp(36px, 5.5vw, 84px); }
+  h3 { font-size: clamp(22px, 2.5vw, 38px); }
+  h4 { font-family: var(--font-mono); font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 18px 36px;
+    font-family: var(--font-mono); font-size: 13px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    border-radius: 999px;
+    transition: all 0.4s cubic-bezier(0.2, 0.7, 0.3, 1);
+    border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--orange); color: var(--black); }
+  .btn-primary:hover { background: var(--ivory); transform: translateY(-2px); box-shadow: 0 20px 40px -10px rgba(243,154,31,0.4); }
+  .btn-ghost { background: transparent; color: var(--ivory); border-color: rgba(255,255,255,0.25); }
+  .btn-ghost:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-2px); }
+  .btn-ghost-dark { background: transparent; color: var(--black); border-color: rgba(10,10,10,0.3); }
+  .btn-ghost-dark:hover { border-color: var(--black); background: var(--black); color: var(--ivory); transform: translateY(-2px); }
+  .btn .arrow { display: inline-block; transition: transform 0.35s ease; }
+  .btn:hover .arrow { transform: translateX(6px); }
+
+  /* ============================================
+     3. NAVIGATION
+     ============================================ */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 18px 0;
+    background: rgba(10,10,10,0.9);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.35s ease;
+  }
+  .nav.scrolled { padding: 12px 0; background: rgba(10,10,10,0.98); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+  .nav-brand { display: flex; align-items: center; gap: 14px; }
+  .nav-brand .den-logo { display: flex; align-items: center; opacity: 0.9; transition: opacity 0.3s ease; }
+  .nav-brand .den-logo:hover { opacity: 1; }
+  .nav-brand .den-logo img { height: 28px; width: auto; display: block; }
+  .nav-brand .pipe { color: var(--line); font-family: var(--font-display); font-size: 22px; line-height: 1; }
+  .nav-brand .pc { color: var(--ivory); font-family: var(--font-display); font-size: 22px; letter-spacing: 0.04em; transition: color 0.3s ease; }
+  .nav-brand .pc:hover { color: var(--orange); }
+  .nav-links { display: flex; gap: 36px; align-items: center; }
+  .nav-links a {
+    font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--bone);
+    position: relative; padding: 4px 0; transition: color 0.3s ease;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -2px; left: 0;
+    width: 0; height: 1px; background: var(--orange); transition: width 0.35s ease;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--orange); }
+  .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+  .nav-cta { padding: 12px 22px; font-size: 12px; }
+  .nav-toggle { display: none; }
+  @media (max-width: 900px) {
+    .nav-links { position: fixed; inset: 70px 0 0 0; background: var(--black); flex-direction: column; padding: 60px var(--gutter); gap: 28px; transform: translateX(100%); transition: transform 0.4s ease; z-index: 99; }
+    .nav-links.open { transform: translateX(0); }
+    .nav-links a { font-size: 18px; }
+    .nav-toggle { display: flex; flex-direction: column; gap: 5px; padding: 8px; }
+    .nav-toggle span { width: 24px; height: 1.5px; background: var(--ivory); transition: all 0.3s; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  }
+
+  /* ============================================
+     4. PAGE HERO
+     ============================================ */
+  .page-hero {
+    background: var(--black);
+    padding: clamp(100px, 14vw, 160px) 0 clamp(50px, 6vw, 80px);
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+  .page-hero::before {
+    content: 'MEMBERSHIPS';
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-family: var(--font-display);
+    font-size: clamp(80px, 14vw, 220px);
+    color: rgba(255,255,255,0.03);
+    white-space: nowrap;
+    pointer-events: none; user-select: none;
+    letter-spacing: 0.02em;
+  }
+  .page-hero-inner {
+    position: relative; z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: end;
+  }
+  .page-hero .eyebrow { margin-bottom: 18px; }
+  .page-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 8vw, 130px);
+    line-height: 0.88;
+    color: var(--ivory);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .page-hero h1 .accent { color: var(--orange); }
+  .page-hero .lede {
+    font-size: clamp(16px, 1.5vw, 19px);
+    color: var(--bone);
+    max-width: 52ch;
+    line-height: 1.65;
+  }
+  .hero-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+    text-align: right;
+  }
+  .hero-meta .meta-item {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--grey-500);
+    line-height: 1.5;
+  }
+  .hero-meta .meta-item strong { color: var(--bone); display: block; font-weight: 600; }
+  @media (max-width: 800px) {
+    .page-hero-inner { grid-template-columns: 1fr; }
+    .hero-meta { align-items: flex-start; text-align: left; flex-direction: row; flex-wrap: wrap; gap: 24px; }
+  }
+
+  /* ============================================
+     5. PRICING TOGGLE
+     ============================================ */
+  .toggle-section {
+    background: var(--black);
+    padding: clamp(40px, 5vw, 60px) 0 0;
+  }
+  .price-toggle-wrap { display: flex; justify-content: center; margin-bottom: 44px; }
+  .price-toggle {
+    display: inline-flex;
+    background: var(--charcoal);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px;
+    gap: 4px;
+  }
+  .price-toggle button {
+    padding: 14px 28px;
+    font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--grey-300); border-radius: 999px;
+    transition: all 0.35s ease; white-space: nowrap;
+  }
+  .price-toggle button.active { background: var(--orange); color: var(--black); }
+  @media (max-width: 600px) {
+    .price-toggle { flex-direction: column; width: 100%; max-width: 340px; border-radius: 12px; }
+    .price-toggle button { width: 100%; }
+  }
+
+  /* ============================================
+     6. PRICING CARDS
+     ============================================ */
+  .plans-section {
+    background: var(--black);
+    padding: 0 0 clamp(50px, 7vw, 90px);
+  }
+  .plans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .plan {
+    background: var(--charcoal);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 36px 30px;
+    display: flex; flex-direction: column;
+    transition: all 0.4s ease;
+    position: relative; overflow: hidden;
+  }
+  .plan:hover { transform: translateY(-6px); border-color: rgba(243,154,31,0.4); }
+  .plan.featured {
+    background: var(--ivory);
+    color: var(--black);
+    border-color: var(--ivory);
+  }
+  .plan.featured:hover { border-color: var(--orange); box-shadow: 0 30px 60px -15px rgba(243,154,31,0.25); }
+  .plan-badge {
+    position: absolute; top: 14px; right: 14px;
+    background: var(--orange); color: var(--black);
+    font-family: var(--font-mono); font-size: 10px;
+    font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 6px 12px; border-radius: 999px;
+  }
+  .plan-name {
+    font-family: var(--font-display); font-size: 30px; font-weight: 400;
+    text-transform: uppercase; letter-spacing: 0.02em;
+    color: var(--ivory); margin-bottom: 6px; line-height: 1;
+  }
+  .plan.featured .plan-name { color: var(--black); }
+  .plan-desc {
+    font-size: 12px; color: var(--grey-500); font-family: var(--font-mono);
+    text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 28px;
+  }
+  .plan.featured .plan-desc { color: var(--grey-500); }
+  .plan-price {
+    font-family: var(--font-display); font-size: 54px; font-weight: 400;
+    line-height: 1; color: var(--ivory); margin-bottom: 4px;
+  }
+  .plan.featured .plan-price { color: var(--black); }
+  .plan-price .currency { font-size: 22px; vertical-align: top; margin-right: 2px; color: var(--orange); }
+  .plan-price .period {
+    font-size: 12px; font-family: var(--font-mono); letter-spacing: 0.12em;
+    color: var(--grey-500); margin-left: 4px; text-transform: uppercase; font-weight: 500;
+  }
+  .plan.featured .plan-price .period { color: var(--grey-500); }
+  .plan-price-sub {
+    font-family: var(--font-mono); font-size: 11px; color: var(--orange);
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 24px;
+  }
+  .plan.featured .plan-price-sub { color: var(--orange-deep); }
+  .plan-features { list-style: none; margin: 0 0 26px 0; flex-grow: 1; }
+  .plan-features li {
+    padding: 10px 0; font-size: 13px; line-height: 1.5;
+    border-top: 1px solid var(--line);
+    display: flex; gap: 12px; align-items: flex-start;
+    color: var(--bone);
+  }
+  .plan.featured .plan-features li { border-color: rgba(10,10,10,0.12); color: #333; }
+  .plan-features li:last-child { border-bottom: 1px solid var(--line); }
+  .plan.featured .plan-features li:last-child { border-color: rgba(10,10,10,0.12); }
+  .plan-features .tick { color: var(--orange); flex-shrink: 0; font-size: 15px; line-height: 1.4; }
+  .plan .btn { width: 100%; justify-content: center; padding: 16px; font-size: 11px; margin-top: auto; }
+  .plan.featured .btn-primary { background: var(--black); color: var(--ivory); }
+  .plan.featured .btn-primary:hover { background: var(--orange); color: var(--black); }
+
+  /* Wellness toggle states */
+  .plan .price-wellness, .plan .features-wellness, .plan .btn-wellness { display: none; }
+  body.wellness-on .plan .price-standard,
+  body.wellness-on .plan .features-standard,
+  body.wellness-on .plan .btn-standard { display: none; }
+  body.wellness-on .plan .price-wellness { display: block; }
+  body.wellness-on .plan .features-wellness { display: flex; flex-direction: column; }
+  body.wellness-on .plan .btn-wellness { display: inline-flex; }
+  body.wellness-on .plan { border-color: rgba(243,154,31,0.4); }
+  body.wellness-on .plan.featured { border-color: var(--orange); box-shadow: 0 0 0 2px rgba(243,154,31,0.2); }
+
+  .wellness-tag {
+    display: none; margin-bottom: 14px;
+    background: var(--orange); color: var(--black);
+    font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 6px 12px; border-radius: 999px; align-self: flex-start;
+  }
+  body.wellness-on .plan:not(.no-wellness) .wellness-tag { display: inline-block; }
+
+  @media (max-width: 1000px) { .plans { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
+
+  /* ============================================
+     7. COMPARISON TABLE
+     ============================================ */
+  .compare-section {
+    background: var(--charcoal);
+    padding: clamp(50px, 7vw, 90px) 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .compare-head { margin-bottom: 40px; }
+  .compare-head .eyebrow { margin-bottom: 14px; }
+  .compare-head h2 { font-size: clamp(32px, 4vw, 60px); }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .compare-table thead th {
+    padding: 18px 20px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--grey-500);
+    border-bottom: 1px solid var(--line);
+    font-weight: 600;
+    text-align: left;
+  }
+  .compare-table thead th.col-plan {
+    text-align: center;
+    color: var(--bone);
+  }
+  .compare-table thead th.col-featured {
+    background: var(--orange);
+    color: var(--black);
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+  }
+  .compare-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+  .compare-table tbody td {
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: var(--bone);
+    vertical-align: middle;
+    text-align: center;
+  }
+  .compare-table tbody td:first-child {
+    text-align: left;
+    color: var(--grey-300);
+    font-size: 13px;
+  }
+  .compare-table tbody td.col-featured {
+    background: rgba(243,154,31,0.04);
+    border-left: 1px solid rgba(243,154,31,0.15);
+    border-right: 1px solid rgba(243,154,31,0.15);
+  }
+  .compare-table .row-section td {
+    background: var(--black);
+    color: var(--orange);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    font-weight: 700;
+    border-bottom: none;
+  }
+  .compare-table .row-section td:first-child { text-align: left; }
+  .tick-yes { color: var(--orange); font-size: 16px; }
+  .tick-no { color: var(--line); font-size: 18px; font-weight: 300; }
+  .tick-text {
+    font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--bone);
+  }
+  .compare-table tfoot td {
+    padding: 24px 20px;
+    text-align: center;
+    border-top: 1px solid var(--line);
+  }
+  .compare-table tfoot td:first-child { text-align: left; }
+  .compare-table tfoot .price-display {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--ivory);
+    line-height: 1;
+  }
+  .compare-table tfoot .price-display .curr { font-size: 14px; color: var(--orange); vertical-align: top; }
+  .compare-table tfoot .price-display .per { font-size: 12px; font-family: var(--font-mono); color: var(--grey-500); }
+  .compare-table tfoot .price-display.featured-price { color: var(--orange); }
+  .compare-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 8px; border: 1px solid var(--line); }
+
+  /* ============================================
+     8. WELLNESS ADD-ON CALLOUT
+     ============================================ */
+  .wellness-callout {
+    background: var(--black);
+    padding: clamp(50px, 7vw, 90px) 0;
+  }
+  .wellness-callout-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  .wellness-callout-text .eyebrow { margin-bottom: 18px; }
+  .wellness-callout-text h2 {
+    color: var(--orange);
+    font-size: clamp(36px, 5vw, 72px);
+    margin-bottom: 22px;
+  }
+  .wellness-callout-text p {
+    font-size: clamp(15px, 1.4vw, 18px);
+    color: var(--bone);
+    line-height: 1.65;
+    max-width: 48ch;
+  }
+  .wellness-callout-text p b { color: var(--orange); font-weight: 600; }
+  .wellness-price-card {
+    background: rgba(243,154,31,0.06);
+    border: 1px solid rgba(243,154,31,0.35);
+    border-radius: 10px;
+    padding: 32px 36px;
+  }
+  .wellness-price-card .label {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 12px; display: block;
+  }
+  .wellness-price-card .price-row {
+    display: flex; align-items: baseline; gap: 6px; margin-bottom: 12px;
+  }
+  .wellness-price-card .plus {
+    font-family: var(--font-display); font-size: 36px; color: var(--orange); line-height: 1;
+  }
+  .wellness-price-card .amount {
+    font-family: var(--font-display); font-size: clamp(56px, 7vw, 80px);
+    color: var(--orange); line-height: 1;
+  }
+  .wellness-price-card .amount .currency { font-size: 0.4em; vertical-align: top; }
+  .wellness-price-card .period {
+    font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--bone);
+  }
+  .wellness-price-card .note {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--grey-300); line-height: 1.6;
+  }
+  @media (max-width: 800px) {
+    .wellness-callout-inner { grid-template-columns: 1fr; }
+  }
+
+  .amenities { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .amenity {
+    background: var(--charcoal);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden; display: flex; flex-direction: column;
+    transition: all 0.4s ease; position: relative;
+  }
+  .amenity::after {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: var(--orange); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.5s ease; z-index: 3;
+  }
+  .amenity:hover { transform: translateY(-5px); border-color: rgba(243,154,31,0.4); }
+  .amenity:hover::after { transform: scaleX(1); }
+  .amenity:hover .amenity-img { transform: scale(1.04); }
+  .amenity-img {
+    width: 100%; aspect-ratio: 4/3;
+    background: linear-gradient(135deg, #2a2a2a, #161616);
+    background-size: cover; background-position: center;
+    transition: transform 0.7s ease;
+  }
+  .amenity-img.thermal { background-image: url('assets/photos/9V5A3189.jpg'); }
+  .amenity-img.relax   { background-image: url('assets/photos/9V5A3204.jpg'); }
+  .amenity-img.experience { background-image: url('assets/photos/9V5A3168.jpg'); }
+  .amenity-body { padding: 22px 24px 26px; flex: 1; }
+  .amenity-icon { width: 26px; height: 26px; margin-bottom: 10px; color: var(--orange); }
+  .amenity h3 { font-size: 22px; margin-bottom: 8px; color: var(--ivory); }
+  .amenity p { color: var(--grey-300); font-size: 13px; line-height: 1.55; }
+  @media (max-width: 900px) { .amenities { grid-template-columns: 1fr; } }
+
+  /* ============================================
+     9. FAQ
+     ============================================ */
+  .faq-section {
+    background: var(--charcoal);
+    padding: clamp(50px, 7vw, 90px) 0;
+    border-top: 1px solid var(--line);
+  }
+  .faq-head { margin-bottom: 40px; }
+  .faq-head .eyebrow { margin-bottom: 14px; }
+  .faq-head h2 { font-size: clamp(32px, 4vw, 60px); }
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 60px;
+  }
+  @media (max-width: 800px) { .faq-grid { grid-template-columns: 1fr; } }
+
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+    padding: 0;
+  }
+  .faq-item:first-of-type { border-top: 1px solid var(--line); }
+  .faq-trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 0;
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--bone);
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  .faq-trigger:hover { color: var(--orange); }
+  .faq-trigger .faq-icon {
+    flex-shrink: 0;
+    width: 20px; height: 20px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; color: var(--orange);
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  .faq-item.open .faq-trigger { color: var(--orange); }
+  .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--orange); color: var(--black); border-color: var(--orange); }
+  .faq-body {
+    display: none;
+    padding: 0 0 22px;
+    font-size: 14px;
+    color: var(--grey-300);
+    line-height: 1.7;
+    max-width: 52ch;
+  }
+  .faq-body a { color: var(--orange); text-decoration: underline; text-underline-offset: 3px; }
+  .faq-item.open .faq-body { display: block; }
+
+  /* ============================================
+     10. FINAL CTA
+     ============================================ */
+  .final-cta {
+    background: var(--orange);
+    padding: clamp(60px, 8vw, 100px) 0;
+    text-align: center;
+  }
+  .final-cta .eyebrow { color: rgba(10,10,10,0.5); margin-bottom: 18px; }
+  .final-cta h2 {
+    color: var(--black);
+    font-size: clamp(42px, 7vw, 110px);
+    margin-bottom: 20px;
+  }
+  .final-cta p {
+    font-size: clamp(16px, 1.5vw, 19px);
+    color: rgba(10,10,10,0.7);
+    max-width: 50ch;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+  .final-cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .final-cta .btn-black {
+    background: var(--black); color: var(--ivory);
+    padding: 18px 36px;
+    font-family: var(--font-mono); font-size: 13px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    border-radius: 999px; border: none;
+    display: inline-flex; align-items: center; gap: 12px;
+    transition: all 0.4s ease;
+  }
+  .final-cta .btn-black:hover { background: var(--charcoal); transform: translateY(-2px); }
+  .final-cta .btn-outline {
+    background: transparent; color: var(--black);
+    padding: 18px 36px;
+    font-family: var(--font-mono); font-size: 13px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    border-radius: 999px; border: 1.5px solid rgba(10,10,10,0.4);
+    display: inline-flex; align-items: center; gap: 12px;
+    transition: all 0.4s ease;
+  }
+  .final-cta .btn-outline:hover { border-color: var(--black); background: rgba(10,10,10,0.08); transform: translateY(-2px); }
+  .final-cta .arrow { display: inline-block; transition: transform 0.35s ease; }
+  .final-cta a:hover .arrow { transform: translateX(6px); }
+
+  /* ============================================
+     11. FOOTER
+     ============================================ */
+  footer {
+    background: var(--black);
+    border-top: 1px solid var(--line);
+    padding: 60px 0 30px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+  }
+  .footer-brand h3 { font-family: var(--font-display); font-size: 30px; color: var(--ivory); margin-bottom: 16px; font-weight: 400; text-transform: uppercase; }
+  .footer-brand h3 .accent { color: var(--orange); }
+  .footer-brand p { color: var(--grey-300); font-size: 14px; max-width: 36ch; line-height: 1.6; margin-bottom: 14px; }
+  .footer-contact { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
+  .footer-contact a, .footer-contact span {
+    font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.06em;
+    color: var(--bone); display: flex; align-items: center; gap: 10px;
+  }
+  .footer-contact a:hover { color: var(--orange); }
+  .footer-contact .ico { width: 14px; height: 14px; color: var(--orange); flex-shrink: 0; }
+  .footer-col h4 { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; color: var(--orange); margin-bottom: 22px; font-weight: 600; text-transform: uppercase; }
+  .footer-col a { display: block; font-size: 14px; color: var(--bone); padding: 6px 0; transition: color 0.3s ease; }
+  .footer-col a:hover { color: var(--orange); }
+  .social-links { display: flex; gap: 12px; margin-top: 6px; }
+  .social-links a {
+    width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; padding: 0; transition: all 0.3s ease;
+  }
+  .social-links a:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-3px); }
+  .social-links svg { width: 16px; height: 16px; }
+  .footer-bottom {
+    border-top: 1px solid var(--line); padding-top: 26px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--grey-500);
+  }
+  .footer-bottom .den-link { color: var(--orange); }
+  .footer-bottom .den-link:hover { color: var(--ivory); }
+  @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; } }
+  @media (max-width: 500px) { .footer-grid { grid-template-columns: 1fr; } }
+
+  /* ============================================
+     12. REVEAL
+     ============================================ */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     NAVIGATION
+============================================ -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <div class="nav-brand">
+      <a href="https://den1880.co" target="_blank" rel="noopener" class="den-logo" aria-label="Den 1880">
+        <img src="assets/logos/DEN1880_Logo_Lockup_Full_White.svg" alt="Den 1880" />
+      </a>
+      <span class="pipe">/</span>
+      <a href="index.html" class="pc">PERFORMANCE CLUB</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#fitness">Fitness</a>
+      <a href="index.html#wellness">Wellness</a>
+      <a href="memberships.html" class="active">Memberships</a>
+      <a href="https://den1880.co" target="_blank" rel="noopener">Den 1880</a>
+      <a href="#pricing" class="btn btn-primary nav-cta">Join <span class="arrow">→</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================
+     PAGE HERO
+============================================ -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div>
+        <span class="eyebrow bracketed reveal">Uptown Waterloo</span>
+        <h1 class="reveal">Memberships<br>That <span class="accent">Move.</span></h1>
+        <p class="lede reveal">Unlimited Performance Club access. Premium coworking through Den 1880. One membership — everything you need to train, recover, and do your best work.</p>
+      </div>
+      <div class="hero-meta reveal">
+        <div class="meta-item">
+          <strong>Mon — Fri</strong>
+          Gym 6am – 8pm
+        </div>
+        <div class="meta-item">
+          <strong>Wellness Add-On</strong>
+          7am – 8pm
+        </div>
+        <div class="meta-item">
+          <strong>30 Days</strong>
+          Notice to cancel
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PRICING TOGGLE + CARDS
+============================================ -->
+<section class="toggle-section" id="pricing">
+  <div class="container">
+    <div class="price-toggle-wrap reveal">
+      <div class="price-toggle" role="tablist" aria-label="Choose membership type">
+        <button type="button" class="active" data-toggle="standard" role="tab" aria-selected="true">Standard</button>
+        <button type="button" data-toggle="wellness" role="tab" aria-selected="false">+ Premium Wellness</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="plans-section">
+  <div class="container">
+    <div class="plans reveal">
+
+      <!-- CLUB -->
+      <article class="plan featured">
+        <span class="plan-badge">Most Popular</span>
+        <span class="wellness-tag">+ Premium Wellness</span>
+        <h3 class="plan-name">Club Membership</h3>
+        <span class="plan-desc">Performance Club + Coworking</span>
+
+        <div class="price-standard">
+          <div class="plan-price"><span class="currency">$</span>328<span class="period">/mo</span></div>
+          <div class="plan-price-sub">Unlimited Access</div>
+        </div>
+        <div class="price-wellness">
+          <div class="plan-price"><span class="currency">$</span>468<span class="period">/mo</span></div>
+          <div class="plan-price-sub">$328 + $140 Wellness Add-On</div>
+        </div>
+
+        <ul class="plan-features features-standard">
+          <li><span class="tick">✓</span> Unlimited Performance Club access (Mon–Fri 6am–8pm)</li>
+          <li><span class="tick">✓</span> Unlimited Hot Desk coworking</li>
+          <li><span class="tick">✓</span> Full Peloton Crosstraining Suite</li>
+          <li><span class="tick">✓</span> Strength, conditioning & functional zones</li>
+          <li><span class="tick">✓</span> Showers, lockers & recovery fridge</li>
+          <li><span class="tick">✓</span> Complimentary yoga, pilates & happy hours</li>
+          <li><span class="tick">✓</span> 20% off meeting rooms</li>
+        </ul>
+        <ul class="plan-features features-wellness">
+          <li><span class="tick">✓</span> Everything in Club, plus:</li>
+          <li><span class="tick">✓</span> <b>Unlimited Sauna access</b></li>
+          <li><span class="tick">✓</span> <b>Unlimited Cold Plunge</b></li>
+          <li><span class="tick">✓</span> <b>Unlimited Hot Tub</b></li>
+          <li><span class="tick">✓</span> <b>Private Nap Pods</b></li>
+          <li><span class="tick">✓</span> <b>High-Tech Massage Chairs</b></li>
+          <li><span class="tick">✓</span> Premium Towel & Robe Service</li>
+        </ul>
+
+        <a href="https://app.optixapp.com/SIGNUP_CLUB_STANDARD" class="btn btn-primary btn-standard">Join Club — $328/mo <span class="arrow">→</span></a>
+        <a href="https://app.optixapp.com/SIGNUP_CLUB_WELLNESS" class="btn btn-primary btn-wellness">Join Club + Wellness — $468/mo <span class="arrow">→</span></a>
+      </article>
+
+      <!-- RESIDENT DESK -->
+      <article class="plan">
+        <span class="wellness-tag">+ Premium Wellness</span>
+        <h3 class="plan-name">Resident Desk</h3>
+        <span class="plan-desc">Performance Club + Dedicated Desk</span>
+
+        <div class="price-standard">
+          <div class="plan-price"><span class="currency">$</span>588<span class="period">/mo</span></div>
+          <div class="plan-price-sub">Dedicated Workspace</div>
+        </div>
+        <div class="price-wellness">
+          <div class="plan-price"><span class="currency">$</span>728<span class="period">/mo</span></div>
+          <div class="plan-price-sub">$588 + $140 Wellness Add-On</div>
+        </div>
+
+        <ul class="plan-features features-standard">
+          <li><span class="tick">✓</span> Everything in Club, plus:</li>
+          <li><span class="tick">✓</span> Dedicated sit-to-stand desk</li>
+          <li><span class="tick">✓</span> Private workspace</li>
+          <li><span class="tick">✓</span> 24/7 access options</li>
+          <li><span class="tick">✓</span> Priority booking</li>
+          <li><span class="tick">✓</span> 20% off meeting rooms</li>
+        </ul>
+        <ul class="plan-features features-wellness">
+          <li><span class="tick">✓</span> Everything in Resident, plus:</li>
+          <li><span class="tick">✓</span> <b>Unlimited Sauna access</b></li>
+          <li><span class="tick">✓</span> <b>Unlimited Cold Plunge</b></li>
+          <li><span class="tick">✓</span> <b>Unlimited Hot Tub</b></li>
+          <li><span class="tick">✓</span> <b>Private Nap Pods</b></li>
+          <li><span class="tick">✓</span> <b>High-Tech Massage Chairs</b></li>
+          <li><span class="tick">✓</span> Premium Towel & Robe Service</li>
+        </ul>
+
+        <a href="https://app.optixapp.com/SIGNUP_RESIDENT_STANDARD" class="btn btn-primary btn-standard">Join Resident — $588/mo <span class="arrow">→</span></a>
+        <a href="https://app.optixapp.com/SIGNUP_RESIDENT_WELLNESS" class="btn btn-primary btn-wellness">Join Resident + Wellness — $728/mo <span class="arrow">→</span></a>
+      </article>
+
+      <!-- PRIVATE OFFICE -->
+      <article class="plan no-wellness">
+        <h3 class="plan-name">Private Office</h3>
+        <span class="plan-desc">Private offices for teams</span>
+
+        <div class="price-standard">
+          <div class="plan-price"><span class="currency">$</span>1,688<span class="period">/mo+</span></div>
+          <div class="plan-price-sub">Starting At — Inquire For Details</div>
+        </div>
+
+        <ul class="plan-features features-standard">
+          <li><span class="tick">✓</span> Private team office suite</li>
+          <li><span class="tick">✓</span> Unlimited Performance Club for all members</li>
+          <li><span class="tick">✓</span> Wellness amenities available as add-on</li>
+          <li><span class="tick">✓</span> Custom hospitality package</li>
+          <li><span class="tick">✓</span> Dedicated account manager</li>
+          <li><span class="tick">✓</span> Flexible scaling as your team grows</li>
+        </ul>
+
+        <a href="https://app.optixapp.com/SIGNUP_PRIVATE_OFFICE" class="btn btn-primary btn-standard">Inquire For Details <span class="arrow">→</span></a>
+      </article>
+
+    </div>
+    <p style="text-align:center; margin-top:24px; font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--grey-500);">
+      Toggle "+ Premium Wellness" above to see prices including the full thermal suite &amp; deep relaxation amenities.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================
+     COMPARISON TABLE
+============================================ -->
+<section class="compare-section">
+  <div class="container">
+    <div class="compare-head reveal">
+      <span class="eyebrow bracketed">What's Included</span>
+      <h2>Compare<br>Plans.</h2>
+    </div>
+    <div class="compare-wrap reveal">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="width:40%"></th>
+            <th class="col-plan col-featured">Club<br><span style="font-size:10px;opacity:0.8;font-weight:400">$328/mo</span></th>
+            <th class="col-plan">Resident Desk<br><span style="font-size:10px;opacity:0.7;font-weight:400">$588/mo</span></th>
+            <th class="col-plan">Private Office<br><span style="font-size:10px;opacity:0.7;font-weight:400">$1,688+/mo</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row-section"><td colspan="4">Fitness</td></tr>
+          <tr>
+            <td>Unlimited Gym Access</td>
+            <td class="col-featured"><span class="tick-yes">✓</span></td>
+            <td><span class="tick-yes">✓</span></td>
+            <td><span class="tick-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>Full Peloton Suite (Bike, Tread, Row)</td>
+            <td class="col-featured"><span class="tick-yes">✓</span></td>
+            <td><span class="tick-yes">✓</span></td>
+            <td><span class="tick-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>Strength, Functional & Reset Zones</td>
+            <td class="col-featured"><span class="tick-yes">✓</span></td>
+            <td><span class="tick-yes">✓</span></td>
+            <td><span class="tick-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>Showers, Lockers & Recovery Fridge</td>
+            <td class="col-featured"><span class="tick-yes">✓</span></td>
+            <td><span class="tick-yes">✓</span></td>
+            <td><span class="tick-yes">✓</span></td>
+          </tr>
+
+          <tr class="row-section"><td colspan="4">Coworking</td></tr>
+          <tr>
+            <td>Hot Desk Coworking</td>
+            <td class="col-featured"><span class="tick-yes">✓</span></td>
+            <td><span class="tick-yes">✓</span></td>
+            <td><span class="tick-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>Dedicated Sit-Stand Desk</td>
+            <td class="col-featured"><span class="tick-no">—</span></td>
+            <td><span class="tick-yes">✓</span></td>
+            <td><span class="tick-no">—</span></td>
+          </tr>
+          <tr>
+            <td>Private Team Office</td>
+            <td class="col-featured"><span class="tick-no">—</span></td>
+            <td><span class="tick-no">—</span></td>
+            <td><span class="tick-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>24/7 Access Options</td>
+            <td class="col-featured"><span class="tick-no">—</span></td>
+            <td><span class="tick-yes">✓</span></td>
+            <td><span class="tick-yes">✓</span></td>
+          </tr>
+
+          <tr class="row-section"><td colspan="4">Amenities</td></tr>
+          <tr>
+            <td>Yoga, Pilates & Happy Hours</td>
+            <td class="col-featured"><span class="tick-yes">✓</span></td>
+            <td><span class="tick-yes">✓</span></td>
+            <td><span class="tick-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td>Meeting Room Discount</td>
+            <td class="col-featured"><span class="tick-text">20% off</span></td>
+            <td><span class="tick-text">20% off</span></td>
+            <td><span class="tick-text">Custom</span></td>
+          </tr>
+          <tr>
+            <td>Account Manager</td>
+            <td class="col-featured"><span class="tick-no">—</span></td>
+            <td><span class="tick-no">—</span></td>
+            <td><span class="tick-yes">✓</span></td>
+          </tr>
+
+          <tr class="row-section"><td colspan="4">Premium Wellness Add-On (+$140/mo)</td></tr>
+          <tr>
+            <td>Sauna, Cold Plunge & Hot Tub</td>
+            <td class="col-featured"><span class="tick-text">Available</span></td>
+            <td><span class="tick-text">Available</span></td>
+            <td><span class="tick-text">Available</span></td>
+          </tr>
+          <tr>
+            <td>Private Nap Pods & Massage Chairs</td>
+            <td class="col-featured"><span class="tick-text">Available</span></td>
+            <td><span class="tick-text">Available</span></td>
+            <td><span class="tick-text">Available</span></td>
+          </tr>
+          <tr>
+            <td>Premium Towel & Robe Service</td>
+            <td class="col-featured"><span class="tick-text">Available</span></td>
+            <td><span class="tick-text">Available</span></td>
+            <td><span class="tick-text">Available</span></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td style="text-align:center">
+              <div class="price-display featured-price"><span class="curr">$</span>328<span class="per">/mo</span></div>
+              <a href="https://app.optixapp.com/SIGNUP_CLUB_STANDARD" class="btn btn-primary" style="margin-top:14px;width:100%;justify-content:center;font-size:11px;padding:14px;">Join Club <span class="arrow">→</span></a>
+            </td>
+            <td style="text-align:center">
+              <div class="price-display"><span class="curr">$</span>588<span class="per">/mo</span></div>
+              <a href="https://app.optixapp.com/SIGNUP_RESIDENT_STANDARD" class="btn btn-ghost" style="margin-top:14px;width:100%;justify-content:center;font-size:11px;padding:14px;">Join Resident <span class="arrow">→</span></a>
+            </td>
+            <td style="text-align:center">
+              <div class="price-display"><span class="curr">$</span>1,688<span class="per">+/mo</span></div>
+              <a href="https://app.optixapp.com/SIGNUP_PRIVATE_OFFICE" class="btn btn-ghost" style="margin-top:14px;width:100%;justify-content:center;font-size:11px;padding:14px;">Inquire <span class="arrow">→</span></a>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     WELLNESS ADD-ON
+============================================ -->
+<section class="wellness-callout">
+  <div class="container">
+    <div class="wellness-callout-inner">
+      <div class="wellness-callout-text reveal">
+        <span class="eyebrow bracketed">Premium Add-On</span>
+        <h2>The Wellness<br>Add On.</h2>
+        <p>Layer the full thermal suite and deep relaxation amenities onto any membership — <b>unlimited access</b>, no booking limits. Available Mon – Fri, 7am – 8pm.</p>
+      </div>
+      <div class="wellness-price-card reveal">
+        <span class="label">Add To Any Membership</span>
+        <div class="price-row">
+          <span class="plus">+</span>
+          <span class="amount"><span class="currency">$</span>140</span>
+          <span class="period">/ month</span>
+        </div>
+        <span class="note">Unlimited sauna · cold plunge · hot tub<br>nap pods · massage chairs · towel & robe service</span>
+      </div>
+    </div>
+
+    <div class="amenities">
+      <article class="amenity reveal">
+        <div class="amenity-img thermal" role="img" aria-label="Thermal Suite"></div>
+        <div class="amenity-body">
+          <svg class="amenity-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <path d="M8 36c4-2 6-2 10 0s6 2 10 0 6-2 10 0"/><path d="M8 28c4-2 6-2 10 0s6 2 10 0 6-2 10 0"/>
+            <path d="M8 20c4-2 6-2 10 0s6 2 10 0 6-2 10 0"/><path d="M14 12v-2M24 12v-2M34 12v-2"/>
+          </svg>
+          <h3>Thermal Suite</h3>
+          <p>Sauna, cold plunge, and hot tub — the full hot/cold cycle for circulation, recovery, and resilience.</p>
+        </div>
+      </article>
+      <article class="amenity reveal">
+        <div class="amenity-img relax" role="img" aria-label="Deep Relaxation"></div>
+        <div class="amenity-body">
+          <svg class="amenity-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 22h28v14a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4V22z"/>
+            <path d="M14 22v-6a6 6 0 0 1 6-6h8a6 6 0 0 1 6 6v6"/><path d="M20 30h8"/>
+          </svg>
+          <h3>Deep Relaxation</h3>
+          <p>High-tech massage chairs and private nap pods — switch off, drop in, recover deeper.</p>
+        </div>
+      </article>
+      <article class="amenity reveal">
+        <div class="amenity-img experience" role="img" aria-label="The Experience"></div>
+        <div class="amenity-body">
+          <svg class="amenity-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="18" r="6"/><circle cx="30" cy="28" r="6"/><path d="M14 38h20"/>
+          </svg>
+          <h3>The Experience</h3>
+          <p>Premium towel service, personalized robe, dedicated locker areas — a true club standard.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FAQ
+============================================ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="faq-head reveal">
+      <span class="eyebrow bracketed">Common Questions</span>
+      <h2>FAQ.</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          Can I cancel anytime?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">Yes — 30 days written notice is all we require. No lock-in contracts, no cancellation fees. We want you here because it's working for you.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          What are the access hours?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">The Performance Club gym is open Monday to Friday, 6am – 8pm. The Premium Wellness amenities (sauna, cold plunge, hot tub, nap pods, massage chairs) are available 7am – 8pm on the same days.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          Is the Wellness Add-On included in the base membership?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">No — the Premium Wellness Add-On is an optional upgrade available for +$140/month on top of any Club or Resident Desk membership. It gives you unlimited access to the full thermal suite and deep relaxation amenities with no booking limits.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          Can I add the Wellness Add-On after joining?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">Absolutely. You can add or remove the Wellness Add-On at any time through your member portal. Changes take effect at the start of your next billing cycle.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          What's included in the Private Office?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">Private Office includes a dedicated team office suite, unlimited Performance Club access for all team members, a custom hospitality package, and a dedicated account manager. Wellness amenities are available as an add-on. Pricing scales with team size — <a href="mailto:info@den1880.co">reach out</a> to discuss your needs.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          Can I try before I commit?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">Yes. We offer day passes so you can experience the space before committing to a membership. You can also <a href="https://den1880.co/book-a-tour" target="_blank" rel="noopener">book a tour</a> to see everything in person — we'd love to show you around.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          Does coworking access include Den 1880's full space?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">Yes. All Performance Club memberships include full hot desk coworking access at Den 1880 — work floors, private library, theatre, lounges, silent phone booths, and community events. It's all under one roof.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          How do I sign up?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">Click any "Join" button above to sign up through our member portal. You can also <a href="mailto:info@den1880.co">email us</a> or <a href="https://den1880.co/book-a-tour" target="_blank" rel="noopener">book a tour</a> and we'll walk you through everything in person.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FINAL CTA
+============================================ -->
+<section class="final-cta">
+  <div class="container">
+    <span class="eyebrow bracketed">Ready?</span>
+    <h2>Let's Get<br>To Work.</h2>
+    <p>Come see the space. We'll show you the gym, the coworking floors, the thermal suite — all of it. Then you can decide.</p>
+    <div class="final-cta-btns">
+      <a href="https://den1880.co/book-a-tour" target="_blank" rel="noopener" class="btn-black">Book a Tour <span class="arrow">→</span></a>
+      <a href="https://app.optixapp.com/SIGNUP_CLUB_STANDARD" class="btn-outline">Join Now <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+============================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span class="accent">The</span> Performance Club</h3>
+        <p>A premium gym, recovery & wellness club in Uptown Waterloo. Powered by Den 1880 — where work works out.</p>
+        <div class="footer-contact">
+          <a href="mailto:info@den1880.co">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            info@den1880.co
+          </a>
+          <span>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Uptown Waterloo, ON
+          </span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Get Started</h4>
+        <a href="https://den1880.co/book-a-tour" target="_blank" rel="noopener">Book a Tour</a>
+        <a href="https://den1880.co/day-passes" target="_blank" rel="noopener">Purchase Day Passes</a>
+        <a href="#pricing">Memberships</a>
+        <a href="mailto:info@den1880.co">Contact Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>The Club</h4>
+        <a href="index.html#fitness">The Performance Club</a>
+        <a href="index.html#wellness">Premium Wellness</a>
+        <a href="index.html">Back to Home</a>
+        <a href="https://den1880.co" target="_blank" rel="noopener">Visit Den1880.co</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="social-links">
+          <a href="https://instagram.com/den1880.co" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="https://ca.linkedin.com/company/den-1880" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="mailto:info@den1880.co" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 The Performance Club — Operated by <a href="https://den1880.co" class="den-link" target="_blank" rel="noopener">Den 1880</a></div>
+      <div>PerformanceClub.ca</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 24);
+  }, { passive: true });
+
+  // Mobile nav
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+    navToggle.classList.remove('open');
+    navLinks.classList.remove('open');
+  }));
+
+  // Pricing toggle
+  document.querySelectorAll('.price-toggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.price-toggle button').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      document.body.classList.toggle('wellness-on', btn.dataset.toggle === 'wellness');
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
