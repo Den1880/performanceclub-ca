@@ -120,41 +120,24 @@
      PAGE HERO
      ============================================ */
   .page-hero {
-    padding: clamp(110px, 14vw, 160px) 0 clamp(50px, 6vw, 70px);
+    padding: clamp(100px, 12vw, 140px) 0 clamp(36px, 4vw, 52px);
     background: var(--black);
     border-bottom: 1px solid var(--line);
     position: relative; overflow: hidden;
   }
-  .page-hero::before {
-    content: 'THE CLUB';
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    font-family: var(--font-display);
-    font-size: clamp(80px, 16vw, 260px);
-    color: rgba(255,255,255,0.03);
-    white-space: nowrap; pointer-events: none; user-select: none;
-    letter-spacing: 0.04em;
-  }
   .page-hero-inner {
     position: relative; z-index: 1;
-    display: flex; justify-content: space-between; align-items: flex-end;
-    flex-wrap: wrap; gap: 30px;
   }
-  .page-hero .eyebrow { margin-bottom: 16px; display: block; }
+  .page-hero .eyebrow { margin-bottom: 14px; display: block; }
   .page-hero h1 {
-    font-size: clamp(56px, 9vw, 140px);
+    font-size: clamp(44px, 7vw, 100px);
     color: var(--ivory);
+    white-space: nowrap;
+    margin-bottom: 28px;
   }
   .page-hero h1 .accent { color: var(--orange); }
-  .page-hero-right {
-    display: flex; flex-direction: column; align-items: flex-end; gap: 16px;
-    text-align: right;
-  }
-  .photo-count {
-    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--grey-500);
-  }
-  .photo-count strong { color: var(--orange); font-size: 28px; font-family: var(--font-display); display: block; font-weight: 400; line-height: 1; }
-  @media (max-width: 700px) { .page-hero-right { align-items: flex-start; text-align: left; } }
+  .page-hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  @media (max-width: 500px) { .page-hero h1 { white-space: normal; font-size: clamp(38px, 10vw, 64px); } }
 
   /* ============================================
      GALLERY GRID — CSS MASONRY COLUMNS
@@ -346,7 +329,7 @@
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="navLinks">
-      <a href="index.html#wellness">Wellness</a>
+      <a href="wellness.html">Wellness</a>
       <a href="memberships.html">Memberships</a>
       <a href="gallery.html" class="active">Gallery</a>
       <a href="https://den1880.optixapp.com/book/tour/" target="_blank" rel="noopener">Book a Tour</a>
@@ -362,16 +345,11 @@
 <section class="page-hero">
   <div class="container">
     <div class="page-hero-inner">
-      <div>
-        <span class="eyebrow bracketed reveal">Performance Club</span>
-        <h1 class="reveal">See <span class="accent">The</span><br>Club.</h1>
-      </div>
-      <div class="page-hero-right reveal">
-        <div class="photo-count">
-          <strong>30</strong>
-          Photos
-        </div>
+      <span class="eyebrow bracketed reveal">Performance Club</span>
+      <h1 class="reveal">See The <span class="accent">Club.</span></h1>
+      <div class="page-hero-ctas reveal">
         <a href="memberships.html" class="btn btn-primary">Join Now <span class="arrow">→</span></a>
+        <a href="https://den1880.optixapp.com/book/tour/" target="_blank" rel="noopener" class="btn btn-ghost">Book a Tour <span class="arrow">→</span></a>
       </div>
     </div>
   </div>
@@ -598,7 +576,7 @@
       <div class="footer-col">
         <h4>The Club</h4>
         <a href="gallery.html">Gallery</a>
-        <a href="index.html#wellness">Premium Wellness</a>
+        <a href="wellness.html">Premium Wellness</a>
         <a href="index.html">Back to Home</a>
         <a href="https://den1880.co" target="_blank" rel="noopener">Visit Den1880.co</a>
       </div>

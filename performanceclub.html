@@ -216,7 +216,7 @@
      ============================================ */
   .hero {
     background: var(--black);
-    padding: clamp(60px, 8vw, 100px) 0;
+    padding: clamp(28px, 3.5vw, 50px) 0 clamp(40px, 5vw, 70px);
     position: relative;
     overflow: hidden;
   }
@@ -231,12 +231,16 @@
   .hero-content .eyebrow { margin-bottom: 20px; }
   .hero-title {
     font-family: var(--font-display);
-    font-size: clamp(56px, 9vw, 150px);
-    line-height: 0.88;
+    font-size: clamp(40px, 7.5vw, 112px);
+    line-height: 0.9;
     color: var(--ivory);
     text-transform: uppercase;
     letter-spacing: 0.005em;
-    margin: 0 0 28px;
+    margin: 0 0 22px;
+    white-space: nowrap;
+  }
+  @media (max-width: 600px) {
+    .hero-title { white-space: normal; font-size: clamp(38px, 10vw, 64px); }
   }
   .hero-sub {
     font-size: clamp(16px, 1.5vw, 20px);
@@ -843,13 +847,13 @@
         <img src="assets/logos/DEN1880_Logo_Lockup_Full_White.svg" alt="Den 1880" />
       </a>
       <span class="pipe">/</span>
-      <a href="#top" class="pc">PERFORMANCE CLUB</a>
+      <a href="index.html" class="pc">PERFORMANCE CLUB</a>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="navLinks">
-      <a href="#wellness">Wellness</a>
+      <a href="wellness.html">Wellness</a>
       <a href="memberships.html">Memberships</a>
       <a href="gallery.html">Gallery</a>
       <a href="https://den1880.optixapp.com/book/tour/" target="_blank" rel="noopener">Book a Tour</a>
@@ -879,22 +883,12 @@
 <section class="hero" id="top">
   <div class="hero-content" style="text-align: center; margin: 0 auto;">
     <span class="eyebrow bracketed reveal">Den 1880</span>
-    <h1 class="hero-title reveal">The Performance<br>Club.</h1>
+    <h1 class="hero-title reveal">The Performance Club.</h1>
     <p class="hero-sub reveal" style="margin-left: auto; margin-right: auto;">A premium gym, recovery &amp; wellness facility with the coworking membership at Den 1880.</p>
     <div class="hero-ctas reveal" style="justify-content: center;">
       <a href="memberships.html" class="btn btn-primary">Explore Memberships <span class="arrow">→</span></a>
       <a href="gallery.html" class="btn btn-ghost">See The Club</a>
     </div>
-  </div>
-</section>
-
-<!-- ============================================
-     MARQUEE STRIP
-============================================ -->
-<section class="marquee-section">
-  <div class="marquee-track" aria-hidden="true">
-    <span>Train <span class="dot">●</span> Recover <span class="dot">●</span> Perform <span class="dot">●</span> Sauna <span class="dot">●</span> Cold Plunge <span class="dot">●</span> Hot Tub <span class="dot">●</span> Nap Pods <span class="dot">●</span> Peloton <span class="dot">●</span> Coworking <span class="dot">●</span></span>
-    <span>Train <span class="dot">●</span> Recover <span class="dot">●</span> Perform <span class="dot">●</span> Sauna <span class="dot">●</span> Cold Plunge <span class="dot">●</span> Hot Tub <span class="dot">●</span> Nap Pods <span class="dot">●</span> Peloton <span class="dot">●</span> Coworking <span class="dot">●</span></span>
   </div>
 </section>
 
@@ -957,78 +951,6 @@
     <img src="assets/photos/IMG_4408.JPG" alt="Den 1880 — Coworking Space" loading="lazy" />
   </div>
 </section>
-
-<!-- ============================================
-     WELLNESS SECTION
-============================================ -->
-<section class="wellness" id="wellness">
-  <div class="container">
-    <div class="reveal">
-      <span class="wellness-badge"><span class="dot"></span> Premium Add-On · Mon — Fri 7am — 8pm</span>
-    </div>
-    <div class="wellness-head reveal">
-      <h2>The Premium<br>Wellness Add On.</h2>
-    </div>
-
-    <div class="wellness-info">
-      <div class="reveal">
-        <p>
-          Transform your training into a full restorative experience. The Premium Wellness Add On layers our thermal suite and deep relaxation amenities onto any membership — <b>unlimited access</b>, no booking limits.
-        </p>
-      </div>
-      <div class="wellness-price-card reveal">
-        <span class="label">Add To Any Membership</span>
-        <div class="price-row">
-          <span class="plus">+</span>
-          <span class="amount"><span class="currency">$</span>140</span>
-          <span class="period">/ month</span>
-        </div>
-        <span class="note">Unlimited sauna, cold plunge, hot tub, nap pods & massage chairs</span>
-      </div>
-    </div>
-
-    <div class="amenities">
-      <article class="amenity reveal">
-        <div class="amenity-img thermal" role="img" aria-label="Thermal Suite"></div>
-        <div class="amenity-body">
-          <svg class="amenity-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-            <path d="M8 36c4-2 6-2 10 0s6 2 10 0 6-2 10 0"/>
-            <path d="M8 28c4-2 6-2 10 0s6 2 10 0 6-2 10 0"/>
-            <path d="M8 20c4-2 6-2 10 0s6 2 10 0 6-2 10 0"/>
-            <path d="M14 12v-2M24 12v-2M34 12v-2"/>
-          </svg>
-          <h3>Thermal Suite</h3>
-          <p>Sauna, cold plunge, and hot tub — the full hot/cold cycle for circulation, recovery, and resilience.</p>
-        </div>
-      </article>
-      <article class="amenity reveal">
-        <div class="amenity-img relax" role="img" aria-label="Deep Relaxation"></div>
-        <div class="amenity-body">
-          <svg class="amenity-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M10 22h28v14a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4V22z"/>
-            <path d="M14 22v-6a6 6 0 0 1 6-6h8a6 6 0 0 1 6 6v6"/>
-            <path d="M20 30h8"/>
-          </svg>
-          <h3>Deep Relaxation</h3>
-          <p>High-tech massage chairs and private nap pods — switch off, drop in, recover deeper.</p>
-        </div>
-      </article>
-      <article class="amenity reveal">
-        <div class="amenity-img experience" role="img" aria-label="The Experience"></div>
-        <div class="amenity-body">
-          <svg class="amenity-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="18" cy="18" r="6"/>
-            <circle cx="30" cy="28" r="6"/>
-            <path d="M14 38h20"/>
-          </svg>
-          <h3>The Experience</h3>
-          <p>Premium towel service, personalized robe, dedicated locker areas — a true club standard.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
 <!-- ============================================
      FOOTER
 ============================================ -->
@@ -1063,7 +985,7 @@
       <div class="footer-col">
         <h4>The Club</h4>
         <a href="#fitness">The Performance Club</a>
-        <a href="#wellness">Premium Wellness</a>
+        <a href="wellness.html">Premium Wellness</a>
         <a href="https://den1880.co" target="_blank" rel="noopener">Den 1880 Coworking</a>
         <a href="https://den1880.co" target="_blank" rel="noopener">Visit Den1880.co</a>
       </div>
