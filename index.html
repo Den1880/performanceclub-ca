@@ -387,6 +387,65 @@
   }
 
   /* ============================================
+     7B. FEATURE SPLIT SECTIONS
+     ============================================ */
+  .feature-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: clamp(500px, 60vw, 720px);
+    border-top: 1px solid var(--line);
+  }
+  .feature-split-text {
+    padding: clamp(56px, 7vw, 100px) clamp(40px, 6vw, 90px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--black);
+    position: relative;
+  }
+  .feature-split-text .eyebrow { margin-bottom: 20px; }
+  .feature-split-text h2 {
+    font-size: clamp(42px, 5.5vw, 80px);
+    color: var(--ivory);
+    line-height: 0.9;
+    margin-bottom: 28px;
+  }
+  .feature-split-text h2 .accent { color: var(--orange); }
+  .feature-split-text p {
+    font-size: clamp(15px, 1.4vw, 18px);
+    color: var(--bone);
+    line-height: 1.7;
+    max-width: 46ch;
+    margin-bottom: 36px;
+    font-weight: 400;
+  }
+  .feature-split-img {
+    overflow: hidden;
+    position: relative;
+  }
+  .feature-split-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .feature-split:hover .feature-split-img img { transform: scale(1.04); }
+
+  /* Alternate: image left, text right */
+  .feature-split.img-left { direction: rtl; }
+  .feature-split.img-left > * { direction: ltr; }
+  .feature-split.img-left .feature-split-text { background: var(--charcoal); }
+
+  @media (max-width: 800px) {
+    .feature-split { grid-template-columns: 1fr; min-height: unset; }
+    .feature-split-img { height: clamp(260px, 55vw, 440px); }
+    .feature-split.img-left { direction: ltr; }
+    .feature-split.img-left .feature-split-img { order: -1; }
+  }
+
+  /* ============================================
      8. WELLNESS SECTION
      ============================================ */
   .wellness {
@@ -790,9 +849,10 @@
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="navLinks">
-      <a href="#fitness">Fitness</a>
       <a href="#wellness">Wellness</a>
       <a href="memberships.html">Memberships</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="https://den1880.optixapp.com/book/tour/" target="_blank" rel="noopener">Book a Tour</a>
       <a href="https://den1880.co" target="_blank" rel="noopener">Den 1880</a>
       <a href="memberships.html" class="btn btn-primary nav-cta">Join <span class="arrow">→</span></a>
     </div>
@@ -817,13 +877,13 @@
      HERO — HEADLINE + CTA
 ============================================ -->
 <section class="hero" id="top">
-  <div class="hero-content">
-    <span class="eyebrow bracketed reveal">Uptown Waterloo</span>
+  <div class="hero-content" style="text-align: center; margin: 0 auto;">
+    <span class="eyebrow bracketed reveal">Den 1880</span>
     <h1 class="hero-title reveal">The Performance<br>Club.</h1>
-    <p class="hero-sub reveal">Premium gym, recovery &amp; wellness — with coworking through Den 1880.</p>
-    <div class="hero-ctas reveal">
+    <p class="hero-sub reveal" style="margin-left: auto; margin-right: auto;">A premium gym, recovery &amp; wellness facility with the coworking membership at Den 1880.</p>
+    <div class="hero-ctas reveal" style="justify-content: center;">
       <a href="memberships.html" class="btn btn-primary">Explore Memberships <span class="arrow">→</span></a>
-      <a href="#fitness" class="btn btn-ghost">See The Club</a>
+      <a href="gallery.html" class="btn btn-ghost">See The Club</a>
     </div>
   </div>
 </section>
@@ -852,48 +912,49 @@
       <li>Nap pods &amp; massage chairs</li>
       <li>Premium towel &amp; robe service</li>
     </ul>
-    <a href="#fitness" class="btn btn-primary">See The Club <span class="arrow">→</span></a>
+    <a href="gallery.html" class="btn btn-primary">See The Club <span class="arrow">→</span></a>
   </div>
   <div class="split-divider"></div>
   <div class="split-col split-work reveal">
     <span class="eyebrow bracketed">Powered By Den 1880</span>
     <h2>Work.<br>Focus.<br>Build.</h2>
-    <p class="split-body">Every Performance Club membership opens the doors to Den 1880 — Uptown Waterloo's premium coworking space. Work floors, private library, theatre, lounges, and a community of founders and creatives.</p>
+    <ul class="split-list">
+      <li>Premium coworking floors</li>
+      <li>Private library &amp; theatre</li>
+      <li>Lounges &amp; focus booths</li>
+      <li>Community of founders &amp; creatives</li>
+    </ul>
     <a href="https://den1880.co" target="_blank" rel="noopener" class="btn btn-ghost">Explore Den 1880 <span class="arrow">→</span></a>
   </div>
 </section>
 
 <!-- ============================================
-     FITNESS SECTION
+     FEATURE — ONE MEMBERSHIP
 ============================================ -->
-<section class="fitness" id="fitness">
-  <div class="container">
-    <div class="fitness-head reveal">
-      <h2>The Performance<br>Club.</h2>
-      <div class="hours">Mon — Fri / 6:00am — 8:00pm</div>
-    </div>
+<section class="feature-split">
+  <div class="feature-split-text reveal">
+    <span class="eyebrow bracketed">Membership</span>
+    <h2>One Membership.<br><span class="accent">Both Worlds.</span></h2>
+    <p>The Performance Club and Den 1880 weren't bolted together — they were built as one. A single membership moves you from the gym floor to the work floor without friction, without compromise. Train in the morning. Deep work by noon. Cold plunge before your next call. This is what it looks like when performance and profession share a roof.</p>
+    <a href="memberships.html" class="btn btn-primary">Explore Memberships <span class="arrow">→</span></a>
   </div>
-  <div class="fitness-tiles">
-    <div class="fitness-tile reveal">
-      <span class="num">01</span>
-      <h4>Heavy Lifting</h4>
-      <p>Power rig, Smith machine, full Olympic bars, plates &amp; dumbbells.</p>
-    </div>
-    <div class="fitness-tile reveal">
-      <span class="num">02</span>
-      <h4>Peloton Suite</h4>
-      <p>Pro-grade Bikes, Treads, and Rower for world-class cardio.</p>
-    </div>
-    <div class="fitness-tile reveal">
-      <span class="num">03</span>
-      <h4>Functional Zone</h4>
-      <p>TRX systems, battle ropes, plyo boxes, GORUCK weighted rucks.</p>
-    </div>
-    <div class="fitness-tile reveal">
-      <span class="num">04</span>
-      <h4>The Reset Zone</h4>
-      <p>Yoga mats, ballet barre, dedicated mobility space &amp; recovery fridge.</p>
-    </div>
+  <div class="feature-split-img">
+    <img src="assets/photos/9V5A3161-2.jpg" alt="Performance Club — One Membership" loading="lazy" />
+  </div>
+</section>
+
+<!-- ============================================
+     FEATURE — WHERE WORK COMES TO LIFE
+============================================ -->
+<section class="feature-split img-left">
+  <div class="feature-split-text reveal">
+    <span class="eyebrow bracketed">Den 1880</span>
+    <h2>Where Work<br>Comes To <span class="accent">Life.</span></h2>
+    <p>Den 1880 is the kind of space that changes what work feels like. Heritage architecture, premium coworking floors, a private library, theatre, lounges, and a community of founders and creatives who are building things worth building. Every Performance Club membership lives here.</p>
+    <a href="https://den1880.co" target="_blank" rel="noopener" class="btn btn-ghost">Explore Den 1880 <span class="arrow">→</span></a>
+  </div>
+  <div class="feature-split-img">
+    <img src="assets/photos/IMG_4408.JPG" alt="Den 1880 — Coworking Space" loading="lazy" />
   </div>
 </section>
 
