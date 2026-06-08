@@ -239,9 +239,9 @@
   .amenity-section:hover .amenity-img img { transform: scale(1.04); }
   @media (max-width: 800px) {
     .amenity-section { grid-template-columns: 1fr; min-height: unset; }
-    .amenity-img { height: clamp(240px, 55vw, 400px); }
+    .amenity-section .amenity-img { height: clamp(240px, 55vw, 400px); grid-row: 1; }
+    .amenity-section .amenity-text { grid-row: 2; }
     .amenity-section.flip { direction: ltr; }
-    .amenity-section.flip .amenity-img { order: -1; }
   }
 
   /* PHOTO GRID */
