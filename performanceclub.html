@@ -148,63 +148,42 @@
     text-transform: uppercase;
     line-height: 0.9;
     letter-spacing: 0.005em;
+    margin-bottom: clamp(10px, 1.5vw, 18px);
+  }
+  .vimeo-overlay-sub {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .vimeo-overlay-sub span {
+    font-family: var(--font-mono);
+    font-size: clamp(11px, 1.2vw, 16px);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+  .vimeo-overlay-sub img {
+    height: clamp(18px, 2vw, 28px);
+    width: auto;
+    display: block;
+    opacity: 0.85;
   }
 
   /* ============================================
-     3B. HERO BRAND SECTION (below video)
+     3B. HERO BRAND SECTION (below video — buttons only)
      ============================================ */
   .hero-brand-section {
-    background: var(--charcoal);
-    padding: clamp(32px, 4vw, 54px) 0;
-    border-top: 1px solid var(--line);
+    background: var(--black);
+    padding: clamp(24px, 3vw, 40px) 0;
     border-bottom: 1px solid var(--line);
     text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-brand-deco {
-    position: absolute;
-    top: 50%;
-    width: clamp(80px, 8vw, 120px);
-    height: auto;
-    pointer-events: none;
-    user-select: none;
-    opacity: 0.85;
-  }
-  .hero-brand-deco.lion {
-    left: clamp(16px, 4vw, 60px);
-    transform: translateY(-50%) rotate(-30deg);
-  }
-  .hero-brand-deco.oval {
-    right: clamp(16px, 4vw, 60px);
-    transform: translateY(-50%) rotate(35deg);
-  }
-  @media (max-width: 700px) { .hero-brand-deco { display: none; } }
-  .hero-brand-section .den-brand-logo {
-    display: inline-block;
-    margin: 0 auto clamp(20px, 2.5vw, 30px);
-    position: relative; z-index: 1;
-  }
-  .hero-brand-section .den-brand-logo img {
-    height: clamp(34px, 4.5vw, 54px);
-    width: auto;
-    display: block;
-  }
-  .hero-brand-sub {
-    font-size: clamp(16px, 1.8vw, 22px);
-    color: var(--bone);
-    max-width: 50ch;
-    margin: 0 auto clamp(26px, 3.5vw, 40px);
-    line-height: 1.5;
-    font-weight: 400;
-    position: relative; z-index: 1;
   }
   .hero-brand-ctas {
     display: flex;
     gap: 14px;
     justify-content: center;
     flex-wrap: wrap;
-    position: relative; z-index: 1;
   }
 
   /* ============================================
@@ -950,6 +929,10 @@
     </iframe>
     <div class="vimeo-title-overlay">
       <h1 class="vimeo-overlay-title">The Performance Club</h1>
+      <div class="vimeo-overlay-sub">
+        <span>at</span>
+        <img src="assets/logos/DEN1880_Logo_Lockup_Full_White.svg" alt="Den 1880" />
+      </div>
     </div>
   </div>
 </section>
@@ -958,13 +941,7 @@
      HERO BRAND — DEN 1880 + CTA
 ============================================ -->
 <section class="hero-brand-section">
-  <img src="assets/logos/DEN1880_Lion_Orange.svg" alt="" class="hero-brand-deco lion" aria-hidden="true" />
-  <img src="assets/logos/DEN1880_88_Oval_Lime.svg" alt="" class="hero-brand-deco oval" aria-hidden="true" />
-  <a href="https://den1880.co" target="_blank" rel="noopener" class="den-brand-logo reveal">
-    <img src="assets/logos/DEN1880_Logo_Lockup_Full_White.svg" alt="Den 1880" />
-  </a>
-  <p class="hero-brand-sub reveal">A premium gym, recovery &amp; wellness facility with the coworking membership at Den 1880.</p>
-  <div class="hero-brand-ctas reveal">
+  <div class="hero-brand-ctas">
     <a href="memberships.html" class="btn btn-primary">Explore Memberships <span class="arrow">→</span></a>
     <a href="gallery.html" class="btn btn-ghost">See The Club <span class="arrow">→</span></a>
   </div>
