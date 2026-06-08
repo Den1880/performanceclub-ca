@@ -168,6 +168,42 @@
   .price-card .note { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey-300); line-height: 1.6; }
   @media (max-width: 800px) { .wellness-intro-grid { grid-template-columns: 1fr; } }
 
+  /* PORTRAIT VIDEO */
+  .wellness-video-section {
+    background: var(--black);
+    padding: clamp(50px, 7vw, 90px) 0;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .wellness-video-label {
+    text-align: center;
+  }
+  .wellness-video-label .eyebrow { margin-bottom: 12px; }
+  .wellness-video-label p {
+    font-size: clamp(14px, 1.3vw, 17px);
+    color: var(--grey-300);
+    max-width: 40ch;
+    line-height: 1.6;
+  }
+  .portrait-video-wrap {
+    width: min(400px, 88vw);
+    position: relative;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    border-radius: 14px;
+    background: var(--charcoal);
+    box-shadow: 0 40px 80px -20px rgba(0,0,0,0.7);
+  }
+  .portrait-video-wrap iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: 0;
+  }
+
   /* AMENITY SECTIONS */
   .amenity-section {
     display: grid;
@@ -347,6 +383,22 @@
         <span class="note">Unlimited sauna · cold plunge · hot tub<br>nap pods · massage chairs · towel &amp; robe</span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- PORTRAIT VIDEO -->
+<section class="wellness-video-section">
+  <div class="wellness-video-label reveal">
+    <span class="eyebrow bracketed">Inside The Club</span>
+    <p>A look inside The Performance Club's wellness and recovery facilities.</p>
+  </div>
+  <div class="portrait-video-wrap reveal">
+    <iframe
+      src="https://player.vimeo.com/video/1190104569?autoplay=1&muted=1&loop=1&background=1"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen
+      title="Performance Club — Wellness & Recovery">
+    </iframe>
   </div>
 </section>
 
