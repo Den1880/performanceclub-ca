@@ -499,9 +499,9 @@
 
   @media (max-width: 800px) {
     .feature-split { grid-template-columns: 1fr; min-height: unset; }
-    .feature-split-img { height: clamp(260px, 55vw, 440px); }
+    .feature-split .feature-split-img { height: clamp(260px, 55vw, 440px); grid-row: 1; }
+    .feature-split .feature-split-text { grid-row: 2; }
     .feature-split.img-left { direction: ltr; }
-    .feature-split.img-left .feature-split-img { order: -1; }
   }
 
   /* ============================================
