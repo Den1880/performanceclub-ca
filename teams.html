@@ -91,12 +91,18 @@
     border-bottom: 1px solid var(--line);
     position: relative; overflow: hidden;
   }
-  .page-hero::before {
-    content: 'TEAMS';
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    font-family: var(--font-display); font-size: clamp(120px, 24vw, 400px);
-    color: rgba(255,255,255,0.025); white-space: nowrap;
-    pointer-events: none; user-select: none; letter-spacing: 0.04em;
+  .page-hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('assets/photos/9V5A3201.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.12;
+    z-index: 0;
+  }
+  .page-hero-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(10,10,10,0.9) 40%, rgba(10,10,10,0.5) 100%);
   }
   .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; }
   .hero-inner .eyebrow { margin-bottom: 20px; display: block; }
@@ -268,8 +274,8 @@
   .allinclusive-head h2 { max-width: 700px; }
   .allinclusive-head p { font-size: clamp(15px, 1.4vw, 18px); color: var(--bone); max-width: 52ch; margin-top: 18px; line-height: 1.65; }
   .included-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
-  .included-item { background: var(--charcoal); padding: 28px 26px; transition: background 0.3s ease; }
-  .included-item:hover { background: var(--smoke); }
+  .included-item { background: #222222; padding: 28px 26px; transition: background 0.3s ease; }
+  .included-item:hover { background: #2a2a2a; }
   .included-item .icon { color: var(--orange); margin-bottom: 14px; }
   .included-item h4 { font-family: var(--font-display); font-size: 20px; font-weight: 400; text-transform: uppercase; color: var(--ivory); margin-bottom: 8px; letter-spacing: 0.02em; }
   .included-item p { font-size: 13px; color: var(--grey-300); line-height: 1.6; }
@@ -364,6 +370,7 @@
 
 <!-- HERO -->
 <section class="page-hero">
+  <div class="page-hero-bg"></div>
   <div class="container">
     <div class="hero-inner">
       <div class="reveal">
@@ -381,30 +388,6 @@
   </div>
 </section>
 
-<!-- STATS STRIP -->
-<div class="stats-strip">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item reveal">
-        <span class="stat-num">5 min</span>
-        <span class="stat-label">From desk<br>to gym floor</span>
-      </div>
-      <div class="stat-item reveal">
-        <span class="stat-num">$0</span>
-        <span class="stat-label">Furniture,<br>setup & IT</span>
-      </div>
-      <div class="stat-item reveal">
-        <span class="stat-num">20+</span>
-        <span class="stat-label">Private offices<br>on Teams Floor</span>
-      </div>
-      <div class="stat-item reveal">
-        <span class="stat-num">49%</span>
-        <span class="stat-label">Average savings<br>vs market rate</span>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- THE BENEFIT -->
 <section class="benefit-section">
   <div class="container">
@@ -413,7 +396,7 @@
         <span class="eyebrow bracketed">The Differentiator</span>
         <h2>Most Companies<br>Talk About<br><span style="color:var(--orange)">Wellness.</span></h2>
         <p>We built it into the floor plan. Every Team Plan seat includes full access to The Performance Club — a private high-performance gym with Peloton, strength, functional, and reset zones, steps from your team's desk.</p>
-        <p>It's the kind of benefit that changes how people feel about where they work. And it's something <b>you can't get at WeWork, Regus, or any other coworking space in Waterloo Region.</b></p>
+        <p>It's the kind of benefit that changes how people feel about where they work. And it's something <b>you won't find anywhere else in Waterloo Region.</b></p>
         <p>Add the Premium Wellness Add-On for +$140/seat/mo and your team gets unlimited sauna, cold plunge, hot tub, nap pods, and massage chairs. A health and wellness benefit your CFO can put through procurement — and your team will actually want.</p>
       </div>
       <div class="benefit-img reveal">
@@ -568,7 +551,7 @@
         </div>
       </div>
       <div class="office-callout-img reveal">
-        <img src="assets/photos/IMG_4408.JPG" alt="Den 1880 — Coworking & Teams Floor" loading="lazy" />
+        <img src="assets/photos/Office6.jpg" alt="Den 1880 — Private Office Suite" loading="lazy" />
       </div>
     </div>
   </div>
@@ -586,7 +569,7 @@
       <div class="included-item">
         <div class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
         <h4>Furnished Workspace</h4>
-        <p>Premium desks, chairs, monitors, and phone booths. Ready from day one — no procurement needed.</p>
+        <p>Premium desks, chairs, phone booths, and everything in between. Fully furnished, fully ready from day one — no procurement needed.</p>
       </div>
       <div class="included-item">
         <div class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
@@ -596,7 +579,7 @@
       <div class="included-item">
         <div class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg></div>
         <h4>High-Speed WiFi & IT</h4>
-        <p>Enterprise-grade internet, printing, and scanning. On-site tech support included. Zero setup time.</p>
+        <p>Enterprise-grade internet, printing, and scanning — all set up and ready. Zero setup time on your end.</p>
       </div>
       <div class="included-item">
         <div class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
@@ -626,7 +609,7 @@
       <div class="included-item">
         <div class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
         <h4>Single Invoice</h4>
-        <p>One contract, one invoice, one point of contact. Scales up or down as your team grows — no renegotiation.</p>
+        <p>One contract, one invoice, one point of contact. No long-term lease — just a simple plan that scales easily as your team grows.</p>
       </div>
     </div>
   </div>
@@ -647,7 +630,7 @@
       </div>
       <div class="quote-card reveal">
         <span class="quote-mark">"</span>
-        <p>It's a coworking space that avoids the usual extremes. Not corporate, not generic. Both serious and inspiring. Far more pleasant than any office I've worked in.</p>
+        <p>It avoids the usual extremes — not corporate, not generic. Both serious and inspiring. Far more pleasant than any office I've worked in.</p>
         <div class="quote-who"><strong>Roger Kirkness</strong>CEO & Founder, Convictional</div>
       </div>
       <div class="quote-card reveal">
