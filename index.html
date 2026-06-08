@@ -109,6 +109,30 @@
   .btn:hover .arrow { transform: translateX(6px); }
 
   /* ============================================
+     3A. VIMEO HERO SECTION
+     ============================================ */
+  .vimeo-hero-section {
+    width: 100%;
+    background: var(--black);
+    padding-top: 60px; /* clear fixed nav */
+  }
+  .vimeo-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+  }
+  .vimeo-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  /* ============================================
      3. NAVIGATION
      ============================================ */
   .nav {
@@ -444,15 +468,15 @@
   .amenity:hover .amenity-img { transform: scale(1.05); }
   .amenity-img {
     width: 100%;
-    aspect-ratio: 16/10;
+    aspect-ratio: 4/3;
     background: linear-gradient(135deg, #2a2a2a, #161616);
     background-size: cover;
     background-position: center;
     transition: transform 0.7s ease;
   }
-  .amenity-img.thermal { background-image: url('images/9V5A3189.jpg'); }
-  .amenity-img.relax { background-image: url('images/9V5A3204.jpg'); }
-  .amenity-img.experience { background-image: url('images/9V5A3075.jpg'); }
+  .amenity-img.thermal { background-image: url('assets/photos/9V5A3189.jpg'); }
+  .amenity-img.relax { background-image: url('assets/photos/9V5A3204.jpg'); }
+  .amenity-img.experience { background-image: url('assets/photos/9V5A3168.jpg'); }
   .amenity-body { padding: 26px 28px 30px; flex: 1; display: flex; flex-direction: column; }
   .amenity-icon { width: 32px; height: 32px; margin-bottom: 14px; color: var(--orange); }
   .amenity h3 { font-size: 26px; margin-bottom: 12px; color: var(--ivory); }
@@ -874,6 +898,20 @@
     </div>
   </div>
 </nav>
+
+<!-- ============================================
+     VIMEO HERO VIDEO (standalone)
+============================================ -->
+<section class="vimeo-hero-section">
+  <div class="vimeo-wrapper">
+    <iframe
+      src="https://player.vimeo.com/video/1196028164?autoplay=1&muted=1&loop=1&background=1"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen
+      title="Performance Club — Where Work Works Out">
+    </iframe>
+  </div>
+</section>
 
 <!-- ============================================
      HERO VIDEO
@@ -1330,7 +1368,7 @@
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
             </svg>
           </a>
-          <a href="https://linkedin.com/company/den1880" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <a href="https://ca.linkedin.com/company/den-1880" target="_blank" rel="noopener" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
               <rect x="2" y="9" width="4" height="12"/>
