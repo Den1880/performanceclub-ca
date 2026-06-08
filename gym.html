@@ -85,24 +85,25 @@
 
   /* HERO */
   .gym-hero {
-    padding: clamp(110px, 14vw, 160px) 0 0;
+    min-height: clamp(620px, 88vh, 960px);
+    padding: clamp(110px, 14vw, 160px) 0 clamp(60px, 8vw, 100px);
     background: var(--black);
     position: relative; overflow: hidden;
+    display: flex; align-items: flex-end;
   }
   .gym-hero-bg {
     position: absolute; inset: 0;
-    background-image: url('assets/photos/9V5A3154.jpg');
-    background-size: cover; background-position: center 30%;
-    opacity: 0.18; z-index: 0;
+    background-image: url('assets/photos/823A2900.jpg');
+    background-size: cover; background-position: center center;
+    opacity: 1; z-index: 0;
   }
   .gym-hero-bg::after {
     content: ''; position: absolute; inset: 0;
-    background: linear-gradient(to bottom, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.85) 100%);
+    background: linear-gradient(to bottom, rgba(10,10,10,0.1) 0%, rgba(10,10,10,0.55) 45%, rgba(10,10,10,0.93) 100%);
   }
   .gym-hero-content {
     position: relative; z-index: 1;
-    padding-bottom: clamp(50px, 7vw, 90px);
-    max-width: 900px;
+    max-width: 900px; width: 100%;
   }
   .gym-hero-content .eyebrow { margin-bottom: 20px; }
   .gym-hero-content h1 {
@@ -129,15 +130,6 @@
     text-transform: uppercase; color: var(--grey-500);
   }
   .gym-hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
-
-  /* HERO IMAGE STRIP */
-  .gym-hero-strip {
-    width: 100%; height: clamp(240px, 35vw, 520px);
-    overflow: hidden; position: relative;
-  }
-  .gym-hero-strip img {
-    width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block;
-  }
 
   /* OVERVIEW */
   .gym-overview {
@@ -288,7 +280,7 @@
     <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     <div class="nav-links" id="navLinks">
       <a href="gym.html" class="active">The Gym</a>
-      <a href="wellness.html">Wellness</a>
+      <a href="wellness.html">The Recovery Suite</a>
       <a href="memberships.html">Memberships</a>
       <a href="https://den1880.optixapp.com/book/tour/" target="_blank" rel="noopener">Book a Tour</a>
       <a href="memberships.html" class="btn btn-primary nav-cta">Get To Work <span class="arrow">→</span></a>
@@ -314,9 +306,6 @@
       </div>
     </div>
   </div>
-  <div class="gym-hero-strip">
-    <img src="assets/photos/9V5A3073.jpg" alt="The Performance Club Gym" />
-  </div>
 </section>
 
 <!-- OVERVIEW -->
@@ -324,28 +313,13 @@
   <div class="container">
     <div class="gym-overview-grid">
       <div class="gym-overview-text reveal">
-        <span class="eyebrow bracketed">Private. Premium. Purposeful.</span>
-        <h2>Not Another<br>Commercial<br><span style="color:var(--orange)">Gym.</span></h2>
-        <p>The Performance Club Gym isn't open to the public. It's a private facility exclusively for members — designed to feel like a boutique training studio, not a big-box floor. Limited membership keeps it that way.</p>
-        <p>Every piece of equipment was chosen with purpose. <b>No filler, no clutter.</b> Just the tools serious training actually requires — from Olympic-grade lifting sets to a full Peloton cross-training suite, all under one roof in Uptown Waterloo.</p>
+        <span class="eyebrow bracketed">Private. Premium. Purpose-Built.</span>
+        <h2>A Private,<br>Premium Gym<br><span style="color:var(--orange)">With Purpose.</span></h2>
+        <p>The Performance Club Gym is exclusively for members — a boutique training facility designed around quality, not quantity. Limited membership keeps the space personal and the experience consistent.</p>
+        <p>Every piece of equipment was chosen with purpose. <b>No filler, no clutter</b> — just the tools serious training actually requires, from Olympic-grade lifting sets to a full Peloton cross-training suite, all under one roof in Uptown Waterloo.</p>
       </div>
-      <div class="gym-stats reveal">
-        <div class="gym-stat">
-          <div class="num">4</div>
-          <div class="lbl">Training zones</div>
-        </div>
-        <div class="gym-stat">
-          <div class="num">6am</div>
-          <div class="lbl">Doors open</div>
-        </div>
-        <div class="gym-stat">
-          <div class="num">Private</div>
-          <div class="lbl">Members only</div>
-        </div>
-        <div class="gym-stat">
-          <div class="num">14</div>
-          <div class="lbl">Erb St. West</div>
-        </div>
+      <div class="gym-overview-img reveal" style="overflow:hidden; border-radius:6px;">
+        <img src="assets/photos/823A2804.jpg" alt="The Performance Club" style="width:100%; height:clamp(340px,45vw,560px); object-fit:cover; display:block; transition:transform 0.9s ease;" />
       </div>
     </div>
   </div>
@@ -367,7 +341,7 @@
     </div>
   </div>
   <div class="zone-img">
-    <img src="assets/photos/9V5A3174.jpg" alt="Heavy Lifting Zone" loading="lazy" />
+    <img src="assets/photos/DSCF7029.JPG" alt="Heavy Lifting Zone" loading="lazy" />
   </div>
 </section>
 
@@ -385,8 +359,16 @@
       <span class="zone-tag">Live & On-Demand</span>
     </div>
   </div>
-  <div class="zone-img">
-    <img src="assets/photos/9V5A3075.jpg" alt="Peloton Suite" loading="lazy" />
+  <div class="zone-img" style="display:flex; align-items:center; justify-content:center; background:var(--black); padding:clamp(30px,4vw,60px) clamp(20px,3vw,40px);">
+    <div style="width:min(300px,75%); aspect-ratio:9/16; position:relative; overflow:hidden; border-radius:12px; box-shadow:0 30px 60px -15px rgba(0,0,0,0.8);">
+      <iframe
+        src="https://player.vimeo.com/video/1199556490?autoplay=1&muted=1&loop=1&background=1"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+        title="Peloton Suite">
+      </iframe>
+    </div>
   </div>
 </section>
 
@@ -492,7 +474,7 @@
       <div class="footer-col">
         <h4>The Club</h4>
         <a href="gym.html">The Gym</a>
-        <a href="wellness.html">Wellness</a>
+        <a href="wellness.html">The Recovery Suite</a>
         <a href="index.html">Back to Home</a>
         <a href="https://den1880.co" target="_blank" rel="noopener">Visit Den1880.co</a>
       </div>

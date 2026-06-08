@@ -86,14 +86,25 @@
 
   /* HERO */
   .wellness-hero {
-    padding: clamp(110px, 14vw, 160px) 0 0;
+    min-height: clamp(620px, 88vh, 960px);
+    padding: clamp(110px, 14vw, 160px) 0 clamp(60px, 8vw, 100px);
     background: var(--black);
     position: relative; overflow: hidden;
+    display: flex; align-items: flex-end;
+  }
+  .wellness-hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('assets/photos/9V5A3201.jpg');
+    background-size: cover; background-position: center center;
+    opacity: 1; z-index: 0;
+  }
+  .wellness-hero-bg::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.1) 0%, rgba(10,10,10,0.55) 45%, rgba(10,10,10,0.93) 100%);
   }
   .wellness-hero-text {
     position: relative; z-index: 1;
-    max-width: 900px;
-    padding-bottom: clamp(44px, 6vw, 70px);
+    max-width: 900px; width: 100%;
   }
   .wellness-hero-text .eyebrow { margin-bottom: 20px; }
   .wellness-hero-text h1 {
@@ -111,20 +122,6 @@
     margin-bottom: 36px;
   }
   .wellness-hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
-
-  /* HERO IMAGE STRIP */
-  .hero-img-strip {
-    width: 100%;
-    height: clamp(260px, 38vw, 560px);
-    overflow: hidden;
-    position: relative;
-  }
-  .hero-img-strip img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    object-position: center 30%;
-    display: block;
-  }
 
   /* BADGE */
   .wellness-badge-wrap { padding: clamp(40px, 5vw, 60px) 0 0; }
@@ -335,7 +332,7 @@
     </button>
     <div class="nav-links" id="navLinks">
       <a href="gym.html">The Gym</a>
-      <a href="wellness.html" class="active">Wellness</a>
+      <a href="wellness.html" class="active">The Recovery Suite</a>
       <a href="memberships.html">Memberships</a>
       <a href="https://den1880.optixapp.com/book/tour/" target="_blank" rel="noopener">Book a Tour</a>
       <a href="memberships.html" class="btn btn-primary nav-cta">Get To Work <span class="arrow">→</span></a>
@@ -345,6 +342,7 @@
 
 <!-- HERO -->
 <section class="wellness-hero">
+  <div class="wellness-hero-bg"></div>
   <div class="container">
     <div class="wellness-hero-text reveal">
       <span class="eyebrow bracketed">Premium Add-On</span>
@@ -355,9 +353,6 @@
         <a href="https://den1880.optixapp.com/book/tour/" target="_blank" rel="noopener" class="btn btn-ghost">Book a Tour <span class="arrow">→</span></a>
       </div>
     </div>
-  </div>
-  <div class="hero-img-strip">
-    <img src="assets/photos/9V5A3201.jpg" alt="The Performance Club — Wellness" />
   </div>
 </section>
 
